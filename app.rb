@@ -10,4 +10,8 @@ class MessagesApp < Sinatra::Base
     erb :messages
   end
 
+  post '/' do
+    @message = Message.create(to: params[:to], from: params[:from], content: params[:content])
+  end
+
 end
